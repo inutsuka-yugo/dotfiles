@@ -1,0 +1,36 @@
+[core]
+    # Set vim as the default editor
+    editor = vim
+    excludesfile = ~/.gitignore_global
+    autocrlf = false    # Use LF for linux/macOS
+    filemode = false    # Ignore chmod changes
+
+[color]
+    ui = auto
+
+[init]
+    defaultBranch = main
+
+[push]
+    default = simple
+
+[pull]
+    ff = only
+
+# Enable Git Credential Manager for Windows
+[credential]
+    helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+
+# Include local gitconfig if it exists
+[include]
+    path = ~/.gitconfig.local
+
+
+[alias]
+    s = status
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
+    last = log -1 HEAD
+    graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
