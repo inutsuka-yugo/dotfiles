@@ -1,0 +1,20 @@
+# Case-insensitive tab completion (Ignore case when pressing Tab)
+set completion-ignore-case on
+
+# Show all auto-complete results immediately (Don't ring bell on first Tab)
+set show-all-if-ambiguous on
+
+# Disable the system bell (No beeping)
+set bell-style none
+
+# History Search with Arrow Keys (THE BEST FEATURE)
+# If you type "git" and press UP, it searches history for commands STARTING with "git"
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+# Colorized completion (Optional, makes list easier to read)
+set colored-stats on
+
+# Make Tab cycle through matches; Shift-Tab cycles backward
+TAB: menu-complete
+"\e[Z": menu-complete-backward

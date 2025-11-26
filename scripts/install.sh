@@ -17,7 +17,7 @@ if [ ! -f "$HOME/.gitconfig.local" ]; then
 	cat >"$HOME/.gitconfig.local" <<EOF
 [user]
     name = Yugo Inutsuka (Auto Generated)
-    email = 
+    email =
 EOF
 	echo "WARNING: Edit ~/.gitconfig.local to set your Git name and email!"
 fi
@@ -40,6 +40,7 @@ backup_if_exists ".bashrc"
 backup_if_exists ".bash_profile"
 backup_if_exists ".profile"
 backup_if_exists ".gitconfig"
+backup_if_exists ".inputrc"
 
 # Use stow to create symlinks for bash and git configurations
 # -v: verbose, -R: recursive (update links), -t: target ($HOME)
