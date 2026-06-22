@@ -111,11 +111,6 @@ if ! shopt -oq posix; then
 	fi
 fi
 
-# Phenix environment setup
-export PHENIX="$HOME/phenix/phenix-1.21.2-5419"
-export PHENIX_VERSION=1.21.2-5419
-. $PHENIX/build/setpaths.sh
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('$HOME/miniforge3/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
