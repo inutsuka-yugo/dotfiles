@@ -45,3 +45,19 @@ alias sync_data='bash ~/dotfiles/scripts/sync_data.sh'
 alias reload='source ~/.bashrc && echo "Bash config reloaded."'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias tensorboardhere='tensorboard --logdir .'
+
+
+# NESRC
+alias sallocG='salloc --nodes 1 --qos interactive --constraint gpu --gpus 4 --account m5179_g --time'
+alias sallocG5m='salloc --nodes 1 --qos interactive --constraint gpu --gpus 4 --account m5179_g --time 00:05:00'
+alias sallocG30m='salloc --nodes 1 --qos interactive --constraint gpu --gpus 4 --account m5179_g --time 00:30:00'
+alias sallocG1h='salloc --nodes 1 --qos interactive --constraint gpu --gpus 4 --account m5179_g --time 01:00:00'
+alias sallocG2h='salloc --nodes 1 --qos interactive --constraint gpu --gpus 4 --account m5179_g --time 02:00:00'
+alias sallocC='salloc --nodes 1 --qos interactive --constraint cpu --account m5179 --time'
+alias sallocC1h='salloc --nodes 1 --qos interactive --constraint cpu --account m5179 --time 01:00:00'
+
+alias conda_aistudio='conda activate /pscratch/sd/i/inutsuka/conda_envs/aistudio/'
+
+alias sbatch_all='bash /pscratch/sd/i/inutsuka/sbatch_all.sh'
+alias analyze_all='bash /pscratch/sd/i/inutsuka/analyze_all.sh'
