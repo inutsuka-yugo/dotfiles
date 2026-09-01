@@ -13,8 +13,15 @@ git clone https://github.com/inutsuka-yugo/dotfiles.git
 ```
 
 ### 2. Run Setup Script
-
+#### With `stow` or `sudo apt install stow` is possible
 Run the installer. This script installs `stow` (if missing) and creates necessary symlinks.
+
+```bash
+bash ~/dotfiles/scripts/install_with_stow.sh
+```
+
+#### Without `stow`
+Run the installer.
 
 ```bash
 bash ~/dotfiles/scripts/install.sh

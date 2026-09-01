@@ -1,6 +1,12 @@
 #!/bin/bash
 set -e
 
+# Installation script for dotfiles using GNU Stow
+if ! command -v stow &>/dev/null; then
+	echo "Installing stow..."
+	sudo apt update && sudo apt install -y stow
+fi
+
 # Move to the dotfiles directory
 cd "$(dirname "$0")/.."
 DOTFILES_DIR=$(pwd)
@@ -36,12 +42,11 @@ backup_if_exists ".profile"
 backup_if_exists ".gitconfig"
 backup_if_exists ".inputrc"
 
+# Use stow to create symlinks for bash and git configurations
+# -v: verbose, -R: recursive (update links), -t: target ($HOME)
 echo "Linking configuration files..."
-for pkg in bash git; do
-  ( cd "$pkg" && find . -mindepth 1 -type d -exec mkdir -p "$HOME/{}" \; )
-  ( cd "$pkg" && find . -mindepth 1 \( -type f -o -type l \) \
-      -exec ln -sfn "$PWD/{}" "$HOME/{}" \; )
-done
+stow -v -R -t "$HOME" bash
+stow -v -R -t "$HOME" git
 
 echo "Done!"
 echo "Run 'source ~/.bashrc'"
